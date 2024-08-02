@@ -11,10 +11,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
+const cors_options = {
   origin: 'http://localhost:3000',
   methods: ['GET', 'POST']
-}));
+}
+
+app.use(cors(cors_options));
 
 const port = process.env.PORT || 5000;
 
@@ -36,8 +38,9 @@ app.use('/api/data', dataRoutes);
 
 const server = http.createServer(app);
 
-const io = new Server(server);
-
+const io = new Server(server, {
+  cors: cors_options
+});
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('disconnect', () => {
