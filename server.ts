@@ -10,7 +10,12 @@ import cors from 'cors'
 dotenv.config();
 
 const app = express();
-// app.use(cors)
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST']
+}));
+
 const port = process.env.PORT || 5000;
 
 console.log(process.env.MONGO_URI);
@@ -31,12 +36,7 @@ app.use('/api/data', dataRoutes);
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000", 
-    methods: ["GET", "POST"]
-  }
-});
+const io = new Server(server);
 
 io.on('connection', (socket) => {
   console.log('a user connected');
