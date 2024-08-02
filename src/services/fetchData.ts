@@ -33,7 +33,7 @@ export const fetchData = (io: Server) => {
 
         await newData.save()
           .then(val => {
-            console.log(`${val.symbol} is saved to DB`);
+            // console.log(`${val.symbol} is saved to DB`);
             io.emit('dataUpdate', val); // Emit the new data to all connected clients
           })
           .catch(err => console.log('error with saving in DB : ', err));
