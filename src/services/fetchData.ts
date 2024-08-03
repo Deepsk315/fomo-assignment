@@ -18,7 +18,7 @@ export const fetchData = (io: Server) => {
       }, {
         headers: {
           "content-type": "application/json",
-          "x-api-key": "b5dfbbe7-ff3e-41d3-85fb-3b4873aad9ec",
+          "x-api-key": "1eff2563-3346-4777-bc92-2a034599723e",
         }
       });
 
@@ -34,7 +34,7 @@ export const fetchData = (io: Server) => {
         await newData.save()
           .then(val => {
             // console.log(`${val.symbol} is saved to DB`);
-            io.emit('dataUpdate', val); // Emit the new data to all connected clients
+            io.emit('dataUpdate', val); 
           })
           .catch(err => console.log('error with saving in DB : ', err));
       }
