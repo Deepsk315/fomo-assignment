@@ -12,19 +12,20 @@ First, clone the repository to your local machine using Git. Open a terminal and
 git clone <repository_url>
 ```
 
-2. Navigate to the Project Directory
+### 2. Navigate to the Project Directory
 
 ```bash
 cd fomo-assignment-backend
 ```
 
-3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-4.Set Up Environment Variables
+### 4. Set Up Environment Variables
+
 Create a .env file in the root directory of your project and add the necessary environment variables. Here is an example of what your .env file might look like:
 
 ```bash
@@ -32,7 +33,7 @@ MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/myDatabase?re
 PORT=4002
 ```
 
-5. Start the Server
+### 5. Start the Server
 
 ```bash
 npm start
