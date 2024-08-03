@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 const cors_options = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000','https://fomo-fr.netlify.app/'],
   methods: ['GET', 'POST']
 }
 
