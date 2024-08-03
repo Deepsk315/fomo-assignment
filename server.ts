@@ -5,16 +5,18 @@ import http from 'http';
 import { Server } from 'socket.io';
 import dataRoutes from './src/routes/data';
 import { fetchData } from './src/services/fetchData';
-import cors from 'cors'
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
 
 const cors_options = {
-  origin: ['http://localhost:3000','https://fomo-fr.netlify.app/'],
-  methods: ['GET', 'POST']
-}
+  origin: ['http://localhost:3000', /\.netlify\.app$/],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true,
+};
 
 app.use(cors(cors_options));
 
@@ -33,6 +35,8 @@ mongoose
   .catch((err) => {
     console.error('Failed to connect to MongoDB', err);
   });
+
+app.options('*', cors(cors_options)); 
 
 app.use('/api/data', dataRoutes);
 
