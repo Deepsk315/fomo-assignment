@@ -18,7 +18,7 @@ export const fetchData = (io: Server) => {
       }, {
         headers: {
           "content-type": "application/json",
-          "x-api-key": "1eff2563-3346-4777-bc92-2a034599723e",
+          "x-api-key": "5f24a8d2-476e-4f4e-a5fa-e7edb8c21ad1",
         }
       });
 

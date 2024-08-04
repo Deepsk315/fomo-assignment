@@ -15,7 +15,7 @@ git clone <repository_url>
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd fomo-assignment
+cd fomo-assignment-backend
 ```
 
 ### 3. Install Dependencies
